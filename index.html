@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Information Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Rural Information Portal</h1>
+    </header>
+
+    <nav>
+        <a href="#home" onclick="showTab('home')">Home</a>
+        <a href="#taluks" onclick="showTab('taluks')">Taluks</a>
+        <a href="#information" onclick="showTab('information')">Information</a>
+        <a href="#news" onclick="showTab('news')">News</a>
+        <a href="#contact" onclick="showTab('contact')">Contact</a>
+    </nav>
+
+    <div id="homeContent" class="content">
+        <h2>Welcome to our Rural Information Portal!</h2>
+        <p>This website provides valuable information about government schemes aimed at benefiting villages. You will find links to the respective government websites where you can explore detailed information about these schemes.</p>
+        
+        <p><strong>Context:</strong> Rural development is a priority, and this portal serves as a bridge between rural communities and government initiatives. Stay informed and empower your village with the knowledge of available schemes.</p>
+
+        <p><strong>Kannada Translation:</strong></p>
+        <p>ನಮ್ಮ ಗ್ರಾಮಗಳಿಗೆ ಲಭ್ಯವಿರುವ ಸರ್ಕಾರದ ಯೋಜನೆಗಳ ಬಗ್ಗೆ ಮಾಹಿತಿ ನೀಡುವ ಈ ವೆಬ್ಸೈಟ್ ಹೆಸರಿನಲ್ಲಿ ಸ್ವಾಗತಿಸಲ್ಪಡುತ್ತದೆ. ಇಲ್ಲಿ ನೀವು ಆ ಯೋಜನೆಗಳ ಬಗ್ಗೆ ವಿವರಗಳನ್ನು ಅಧ್ಯಯನಿಸಬಹುದು ಮತ್ತು ಅವುಗಳ ಮೇಲೆ ಹತ್ತಿರವಿರುವ ಸರ್ಕಾರದ ವೆಬ್ಸೈಟ್ಗಳಿಗೆ ಲಿಂಕ್ ಪಡೆಯಬಹುದು.</p>
+    </div>
+    <div id="taluksContent" class="content" style="display: none;">
+        <h2>Explore Taluks</h2>
+        
+        <div class="taluk-box" id="agara">
+            <h3>Agara</h3>
+            <p>Information about Agara Taluk.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/agara.html" target="_blank">Learn more</a></p>
+        </div>
+    
+        <div class="taluk-box" id="Badamanavarthekaval">
+            <h3>Taluk2</h3>
+            <p>Information about Taluk2.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/badamanavarthekaval.html" target="_blank">Learn more</a></p>
+        </div>
+    
+        <div class="taluk-box" id="Kaggalipura">
+            <h3>Taluk3</h3>
+            <p>Information about Taluk3.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/kaggalipura.html" target="_blank">Learn more</a></p>
+        </div>
+    
+        <div class="taluk-box" id="O B Chudahalli">
+            <h3>Taluk4</h3>
+            <p>Information about Taluk4.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/o-b-chudahalli.html" target="_blank">Learn more</a></p>
+        </div>
+    </div>
+    <div id="informationContent" class="content" style="display: none;">
+        <h2>Useful Information</h2>
+        
+        <div class="info-box">
+            <h3>KARNATAKA GEOGRAPHIC INFORMATION SYSTEM</h3>
+            <p>Information about Box 1. <a href="https://kgis.ksrsac.in/kgis/" target="_blank">Learn more</a></p>
+        </div>
+
+        <div class="info-box">
+            <h3>GOVERNMENT OF KARNATAKA</h3>
+            <p>Official Website of GOVERNMENT of KARNATAKA  <a href="https://www.karnataka.gov.in/english" target="_blank">Learn more</a></p>
+        </div>
+
+        <div class="info-box">
+            <h3>Ruarl Driking Water And Santitation</h3>
+            <p>Department of Ruarl Driking Water And Santitation  <a href="https://english.swachhamevajayate.org/" target="_blank">Learn more</a></p>
+        </div>
+
+        <div class="info-box">
+            <h3>Rural Development and Panchayat Raj Department</h3>
+            <p>Department of Rural Development and Panchayat Raj, Government of Karnataka  <a href="https://rdpr.karnataka.gov.in/english" target="_blank">Learn more</a></p>
+        </div>
+
+        <div class="info-box">
+            <h3>National Institute of Agricultural Extention Management</h3>
+            <p>Information about Box 5. <a href="https://www.manage.gov.in/fpoacademy/CGSchemes/central-schemes.asp" target="_blank">Learn more</a></p>
+        </div>
+
+        <div class="info-box">
+            <h3>Department of Higher Education</h3>
+            <p>Official Website of Department of Higher Education, Government of India <a href="https://www.education.gov.in/schemes" target="_blank">Learn more</a></p>
+        </div>
+
+        <div class="info-box">
+            <h3>Startup India</h3>
+            <p>Official Website of Department for Promotion of Industry and Internal Trade <a href="https://www.startupindia.gov.in/content/sih/en/government-schemes.html" target="_blank">Learn more</a></p>
+        </div>
+        <div class="info-box">
+            <h3>SUKANYA SAMRIDDHI YOJANA</h3>
+            <p>Information about Box 8. <a href="https://transformingindia.mygov.in/scheme/sukanya-samriddhi-yojana/" target="_blank">Learn more</a></p>
+        </div>
+        <div class="info-box">
+            <h3>Fertilizer Subsidy</h3>
+            <p>MINISTRY OF CHEMICALS & FERTILIZERS, Department of Fertilizers, Govt. of India. <a href="https://www.fert.nic.in/fertilizer-subsidy" target="_blank">Learn more</a></p>
+        </div>
+        <div class="info-box">
+            <h3>MINISTRY OF RURAL DEVELOPMENT</h3>
+            <p>List of Central Government Schemes for Ruarl Development. <a href="https://rural.nic.in/en/scheme-websites" target="_blank">Learn more</a></p>
+        </div>
+    </div>
+    <div id="newsContent" class="content" style="display: none;">
+        <h2>Latest News</h2>
+    
+        <div class="news-box">
+            <h3>Farmer Welfare Scheme</h3>
+            <p>Ministry of Agriculture & Farmers Welfare || Date: Posted On: 01 AUG 2023 5:34PM by PIB Delhi<a href="https://pib.gov.in/PressReleasePage.aspx?PRID=1944749" target="_blank">Read more</a></p>
+        </div>
+    
+        <div class="news-box">
+            <h3>National Portal of India</h3>
+            <p>Latest updates <a href="https://www.india.gov.in/topics/rural" target="_blank">Read more</a></p>
+        </div>
+    
+        <div class="news-box">
+            <h3>List of Government Holidays, 2023</h3>
+            <p>Latest updates <a href="https://ceg.karnataka.gov.in/frontend/opt1/pdfs/HOLIDAYSLIST2023.pdf" target="_blank">Read more</a></p>
+        </div>
+    
+        <div class="news-box">
+            <h3>Karnataka-eSamikSha</h3>
+            <p>Karnataka-eSamikSha is a real time, online system for . <a href="https://esamiksha.gov.in/Karnataka/" target="_blank">Read more</a></p>
+        </div>
+    </div>
+    <div id="contactContent" class="content" style="display: none;">
+        <h2>Contact Us</h2>
+        <p>This website was created as a part of the project work under AICTE</p>
+        <p>By the students from the Department of CSE , Dayananda Sagar Academy of Technology and Management</p>
+        <p>For inquiries, please contact us at: <a href="@dsatm.edu.in">@dsatm.edu.in</a></p>
+        <p>To report any Bugs and Suggestions : <a href="github.com/Karthik-R-R">Contact-1</a>  <a href="github.com/John-C7">Contact-2</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Rural Information Portal</p>
+    </footer>
+    <script src="script.js"></script>
+
+    <script>
+        function showTab(tab) {
+        var homeContent = document.getElementById('homeContent');
+        var taluksContent = document.getElementById('taluksContent');
+        var informationContent = document.getElementById('informationContent');
+        var newsContent = document.getElementById('newsContent');
+        var contactContent = document.getElementById('contactContent');
+
+        if (tab === 'home') {
+            homeContent.style.display = 'block';
+            taluksContent.style.display = 'none';
+            informationContent.style.display = 'none';
+            newsContent.style.display = 'none';
+            contactContent.style.display = 'none';
+        } else if (tab === 'taluks') {
+            homeContent.style.display = 'none';
+            taluksContent.style.display = 'block';
+            informationContent.style.display = 'none';
+            newsContent.style.display = 'none';
+            contactContent.style.display = 'none';
+        } else if (tab === 'information') {
+            homeContent.style.display = 'none';
+            taluksContent.style.display = 'none';
+            informationContent.style.display = 'block';
+            newsContent.style.display = 'none';
+            contactContent.style.display = 'none';
+        } else if (tab === 'news') {
+            homeContent.style.display = 'none';
+            taluksContent.style.display = 'none';
+            informationContent.style.display = 'none';
+            newsContent.style.display = 'block';
+            contactContent.style.display = 'none';
+        }else if (tab === 'contact') {
+            homeContent.style.display = 'none';
+            taluksContent.style.display = 'none';
+            informationContent.style.display = 'none';
+            newsContent.style.display = 'none';
+            contactContent.style.display = 'block';
+        }
+    }
+    </script>
+
+</body>
+</html>
