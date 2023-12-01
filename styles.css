@@ -12,6 +12,21 @@ header {
     text-align: center;
 }
 
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #dbc834;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #b93f29;
+}
+
+
 nav {
     background-color: #444;
     overflow: hidden;
@@ -68,4 +83,9 @@ footer {
 
 .news-box:hover {
     background-color: #ddd;
+}
+
+h2 {
+    text-shadow: #444;
+    color: steelblue;
 }
