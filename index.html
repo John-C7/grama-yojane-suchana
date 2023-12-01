@@ -140,85 +140,45 @@
         <p>&copy; 2023 Rural Information Portal</p>
     </footer>
     <script src="script.js"></script>
-
     <script>
-        function showTab(tab) {
-        var homeContent = document.getElementById('homeContent');
-        var taluksContent = document.getElementById('taluksContent');
-        var informationContent = document.getElementById('informationContent');
-        var newsContent = document.getElementById('newsContent');
-        var contactContent = document.getElementById('contactContent');
+        var currentLanguage = 'english';
 
-        if (tab === 'home') {
-            homeContent.style.display = 'block';
-            taluksContent.style.display = 'none';
-            informationContent.style.display = 'none';
-            newsContent.style.display = 'none';
-            contactContent.style.display = 'none';
-        } else if (tab === 'taluks') {
-            homeContent.style.display = 'none';
-            taluksContent.style.display = 'block';
-            informationContent.style.display = 'none';
-            newsContent.style.display = 'none';
-            contactContent.style.display = 'none';
-        } else if (tab === 'information') {
-            homeContent.style.display = 'none';
-            taluksContent.style.display = 'none';
-            informationContent.style.display = 'block';
-            newsContent.style.display = 'none';
-            contactContent.style.display = 'none';
-        } else if (tab === 'news') {
-            homeContent.style.display = 'none';
-            taluksContent.style.display = 'none';
-            informationContent.style.display = 'none';
-            newsContent.style.display = 'block';
-            contactContent.style.display = 'none';
-        }else if (tab === 'contact') {
-            homeContent.style.display = 'none';
-            taluksContent.style.display = 'none';
-            informationContent.style.display = 'none';
-            newsContent.style.display = 'none';
-            contactContent.style.display = 'block';
-        }
-    }
         function toggleLanguage() {
             var langButton = document.querySelector('button');
-            var currentLanguage = langButton.textContent;
 
-            if (currentLanguage === 'Switch to Kannada') {
+            if (currentLanguage === 'english') {
                 langButton.textContent = 'Switch to English';
                 translateToKannada();
+                currentLanguage = 'kannada';
             } else {
                 langButton.textContent = 'Switch to Kannada';
                 translateToEnglish();
+                currentLanguage = 'english';
             }
         }
 
         function translateToKannada() {
-            // Add Kannada translations for each piece of content
-            document.getElementById('homeContent').innerHTML = `
-                <!-- Kannada translations for home content -->
-                <h2>ನಮ್ಮ ಗ್ರಾಮ ಮಾಹಿತಿ ಪೋರ್ಟಲ್ ಗೆ ಸುಸ್ವಾಗತ!</h2>
-                <!-- Add more translations as needed -->
+            // Add your Kannada translations here
+            document.getElementById('contactContent').innerHTML = `
+                <h2>ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</h2>
+                <p>ಈ ವೆಬ್ಸೈಟ್ ಒಂದು AICTE ಯಜಮಾನತ್ವದ ಭಾಗವಾಗಿ ರಚಿಸಲಾಗಿದೆ</p>
+                <p>ಸಿಎಸ್ಇ ವಿಭಾಗದಿಂದ ದಯಾನಂದ ಸಾಗರ ತಾಂತ್ರಿಕ ಮತ್ತು ವಿವಿಧಿಯ ಮಂಜೂರಿಗೆ ಸೇರಿದ ವಿದ್ಯಾರ್ಥಿಗಳ ಕೈಯಲ್ಲಿ ಕೃತಿ ಕಾರ್ಯದ ಭಾಗವಾಗಿದೆ</p>
+                <p>ಪ್ರಶ್ನೆಗಾಗಿ ದಯವಿಟ್ಟು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ: <a href="mailto:Karthikrr@duck.com">ಇ-ಮೇಲ್</a></p>
+                <p>ಯಾವುದೇ ದೋಷ ಮತ್ತು ಸೂಚನೆಗಳನ್ನು ವರದಿಸಲಾಗಿದೆ ಎಂದರೆ: <a href="github.com/Karthik-R-R">ಸಂಪರ್ಕ-1</a>  <a href="github.com/John-C7">ಸಂಪರ್ಕ-2</a></p>
             `;
-            
-            // Repeat this process for each content section
-            // Example: translateToKannada for taluks, information, news, and contact
         }
 
         function translateToEnglish() {
-            // Add English translations for each piece of content
-            document.getElementById('homeContent').innerHTML = `
-                <!-- English translations for home content -->
-                <h2>Welcome to our Rural Information Portal!</h2>
-                <!-- Add more translations as needed -->
+            // Add your English translations here
+            document.getElementById('contactContent').innerHTML = `
+                <h2>Contact Us</h2>
+                <p>This website was created as a part of the project work under AICTE</p>
+                <p>By the students from the Department of CSE, Dayananda Sagar Academy of Technology and Management</p>
+                <p>For inquiries, please contact us at: <a href="mailto:Karthikrr@duck.com">E-Mail</a></p>
+                <p>To report any Bugs and Suggestions: <a href="github.com/Karthik-R-R">Contact-1</a>  <a href="github.com/John-C7">Contact-2</a></p>
             `;
-
-            // Repeat this process for each content section
-            // Example: translateToEnglish for taluks, information, news, and contact
         }
-
-        // Rest of your existing JavaScript code remains unchanged
     </script>
+
 </body>
 </html>
