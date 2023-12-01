@@ -13,6 +13,8 @@
         <h1>Rural Information Portal</h1>
     </header>
 
+    <button onclick="toggleLanguage()">Switch to Kannada</button>
+
     <nav>
         <a href="#home" onclick="showTab('home')">Home</a>
         <a href="#taluks" onclick="showTab('taluks')">Taluks</a>
@@ -39,18 +41,18 @@
         </div>
     
         <div class="taluk-box" id="Badamanavarthekaval">
-            <h3>Taluk2</h3>
-            <p>Information about Taluk2.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/badamanavarthekaval.html" target="_blank">Learn more</a></p>
+            <h3>Badamanavarthekaval</h3>
+            <p>Information about Badamanavarthekaval.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/badamanavarthekaval.html" target="_blank">Learn more</a></p>
         </div>
     
         <div class="taluk-box" id="Kaggalipura">
-            <h3>Taluk3</h3>
-            <p>Information about Taluk3.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/kaggalipura.html" target="_blank">Learn more</a></p>
+            <h3>Kaggalipura</h3>
+            <p>Information about Kaggalipura.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/kaggalipura.html" target="_blank">Learn more</a></p>
         </div>
     
         <div class="taluk-box" id="O B Chudahalli">
-            <h3>Taluk4</h3>
-            <p>Information about Taluk4.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/o-b-chudahalli.html" target="_blank">Learn more</a></p>
+            <h3>O B Chudahalli</h3>
+            <p>Information about O B Chudahalli.<a href="https://villageinfo.in/karnataka/bangalore/bangalore-south/o-b-chudahalli.html" target="_blank">Learn more</a></p>
         </div>
     </div>
     <div id="informationContent" class="content" style="display: none;">
@@ -179,7 +181,44 @@
             contactContent.style.display = 'block';
         }
     }
-    </script>
+        function toggleLanguage() {
+            var langButton = document.querySelector('button');
+            var currentLanguage = langButton.textContent;
 
+            if (currentLanguage === 'Switch to Kannada') {
+                langButton.textContent = 'Switch to English';
+                translateToKannada();
+            } else {
+                langButton.textContent = 'Switch to Kannada';
+                translateToEnglish();
+            }
+        }
+
+        function translateToKannada() {
+            // Add Kannada translations for each piece of content
+            document.getElementById('homeContent').innerHTML = `
+                <!-- Kannada translations for home content -->
+                <h2>ನಮ್ಮ ಗ್ರಾಮ ಮಾಹಿತಿ ಪೋರ್ಟಲ್ ಗೆ ಸುಸ್ವಾಗತ!</h2>
+                <!-- Add more translations as needed -->
+            `;
+            
+            // Repeat this process for each content section
+            // Example: translateToKannada for taluks, information, news, and contact
+        }
+
+        function translateToEnglish() {
+            // Add English translations for each piece of content
+            document.getElementById('homeContent').innerHTML = `
+                <!-- English translations for home content -->
+                <h2>Welcome to our Rural Information Portal!</h2>
+                <!-- Add more translations as needed -->
+            `;
+
+            // Repeat this process for each content section
+            // Example: translateToEnglish for taluks, information, news, and contact
+        }
+
+        // Rest of your existing JavaScript code remains unchanged
+    </script>
 </body>
 </html>
