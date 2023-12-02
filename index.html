@@ -20,20 +20,33 @@
         <a href="#taluks" onclick="showTab('taluks')">Taluks</a>
         <a href="#information" onclick="showTab('information')">Information</a>
         <a href="#news" onclick="showTab('news')">News</a>
+        <a href="#gramPanchayat" onclick="showTab('gramPanchayat')">Gram Panchayat</a>
         <a href="#contact" onclick="showTab('contact')">Contact</a>
     </nav>
 
     <div id="homeContent" class="content">
         <h2>Welcome to our Rural Information Portal!</h2>
         <p>This website provides valuable information about government schemes aimed at benefiting villages. You will find links to the respective government websites where you can explore detailed information about these schemes.</p>
-        
+        <p><h3>Find your nearest Gram Panchayat Office <button onclick="redirectToGramPanchayat()">Click Here</button></h3></p>
         <p><strong>Context:</strong> Rural development is a priority, and this portal serves as a bridge between rural communities and government initiatives. Stay informed and empower your village with the knowledge of available schemes.</p>
-
-        <p><strong>Kannada Translation:</strong></p>
-        <p>ನಮ್ಮ ಗ್ರಾಮಗಳಿಗೆ ಲಭ್ಯವಿರುವ ಸರ್ಕಾರದ ಯೋಜನೆಗಳ ಬಗ್ಗೆ ಮಾಹಿತಿ ನೀಡುವ ಈ ವೆಬ್ಸೈಟ್ ಹೆಸರಿನಲ್ಲಿ ಸ್ವಾಗತಿಸಲ್ಪಡುತ್ತದೆ. ಇಲ್ಲಿ ನೀವು ಆ ಯೋಜನೆಗಳ ಬಗ್ಗೆ ವಿವರಗಳನ್ನು ಅಧ್ಯಯನಿಸಬಹುದು ಮತ್ತು ಅವುಗಳ ಮೇಲೆ ಹತ್ತಿರವಿರುವ ಸರ್ಕಾರದ ವೆಬ್ಸೈಟ್ಗಳಿಗೆ ಲಿಂಕ್ ಪಡೆಯಬಹುದು.</p>
     </div>
     <div id="taluksContent" class="content" style="display: none;">
-        <h2>Explore Taluks</h2>
+        <h2>Karnataka-One Centers</h2>
+        <div class="taluk-box" id="Bengaluru Rural">
+            <h3>Karnataka-One Centers</h3>
+            <p>List of Karnataka One Centers <a href="https://www.karnatakaone.gov.in/Public/CenterDetails" target="_blank">Learn more</a></p>
+        </div>
+        <h2>Mysore-One Centers</h2>
+        <div class="taluk-box" id="Bengaluru Rural">
+            <h3>Mysore-One Centers</h3>
+            <p>Information about Mysore One Centers <a href="https://www.karnataka.com/mysore/mysore-one/" target="_blank">Learn more</a></p>
+        </div>
+        <h2>Tumkuru-One Centers</h2>
+        <div class="taluk-box" id="Bengaluru Rural">
+            <h3>Tumkuru-One Centers</h3>
+            <p>Information about Tumkuru One Centers <a href="https://www.karnataka.com/govt/tumkur-one/" target="_blank">Learn more</a></p>
+        </div>
+        <h2>Explore Taluks in Bengaluru South</h2>
         
         <div class="taluk-box" id="agara">
             <h3>Agara</h3>
@@ -94,7 +107,7 @@
         </div>
         <div class="info-box">
             <h3>SUKANYA SAMRIDDHI YOJANA</h3>
-            <p>Information about Box 8. <a href="https://transformingindia.mygov.in/scheme/sukanya-samriddhi-yojana/" target="_blank">Learn more</a></p>
+            <p>Information about Schemes <a href="https://transformingindia.mygov.in/scheme/sukanya-samriddhi-yojana/" target="_blank">Learn more</a></p>
         </div>
         <div class="info-box">
             <h3>Fertilizer Subsidy</h3>
@@ -103,6 +116,10 @@
         <div class="info-box">
             <h3>MINISTRY OF RURAL DEVELOPMENT</h3>
             <p>List of Central Government Schemes for Ruarl Development. <a href="https://rural.nic.in/en/scheme-websites" target="_blank">Learn more</a></p>
+        </div>
+        <div class="info-box">
+            <h3>Panchatantra</h3>
+            <p>Gram Panchayat information. <a href="https://panchatantra.karnataka.gov.in/" target="_blank">Learn More</a></p>
         </div>
     </div>
     <div id="newsContent" class="content" style="display: none;">
@@ -127,6 +144,59 @@
             <h3>Karnataka-eSamikSha</h3>
             <p>Decisions taken during the presentations made by different Department to the Chief Minister <a href="https://esamiksha.gov.in/Karnataka/" target="_blank">Read more</a></p>
         </div>
+        <div class="news-box">
+            <h3>Karnataka-One</h3>
+            <p>Karnataka One Official Website latest updates <a href="https://www.karnatakaone.gov.in/" target="_blank">Read more</a></p>
+        </div>
+        <div class="news-box">
+            <h3>Karnataka-Data-Gov</h3>
+            <p>Rural DataSet || Updated on 01/06/2023 <a href="https://karnataka.data.gov.in/catalogs?sector=Rural" target="_blank">Read more</a></p>
+        </div>
+    </div>
+    <div id="gramPanchayatContent" class="content" style="display: none;">
+        <h2>Gram Panchayat</h2>
+    
+        <label for="district">District *</label>
+        <select id="district" name="district">
+            <option value="BENGALURU">BENGALURU</option>
+            <!-- Add other district options if needed -->
+        </select>
+    
+        <label for="taluk">Taluk *</label>
+        <select id="taluk" name="taluk" onchange="updateGramaPanchayatOptions()">
+            <option value="BENGALURU SOUTH">BENGALURU SOUTH</option>
+            <option value="BENGALURU NORTH">BENGALURU NORTH</option>
+            <option value="BENGALURU EAST">BENGALURU EAST</option>
+            <option value="BENGALURU WEST">BENGALURU WEST</option>
+        </select>
+
+        <label for="gramaPanchayat">Grama Panchayat *</label>
+        <select id="gramaPanchayat" name="gramaPanchayat">
+            <option value="Agara">AGARA</option>
+            <option value="Ajjanahalli">AJJANAHALLI</option>
+            <option value="ChannenaHalli">CHENNENA HALLI</option>
+            <option value="CHIKKANAHALLI">CHIKKANA HALLI</option>
+            <option value="CHOLANAYAKANAHALLI">CHOLANAYAKANA HALLI</option>
+            <option value="CHUNCHANAKUPPE">CHUNCHANA KUPPE</option>
+            <option value="DODDATHOGURU">DODDA THOGURU</option>
+            <option value="HGOLLAHALLI">H. GOLLAHALLI</option>
+            <option value="KGOLLAHALLI">K. GOLLAHALLI</option>
+            <option value="KAGGALIPURA">KAGGALIPURA</option>
+            <option value="KONAPPANAAGRAHAARA">KONAPPANA AGRAHAARA</option>
+            <option value="KUMBALAGODU">KUMBALAGODU</option>
+            <option value="NELAGULI">NELAGULI</option>
+            <option value="RAMOHALLI">RAMOHALLI</option>
+            <option value="SOMANAHALLI">SOMANA HALLI</option>
+            <option value="SOOLIKERE">SOOLIKERE</option>
+            <option value="THARALU">THARALU</option>
+            <option value="THAVAREKERE">THAVAREKERE</option>
+        </select>
+    
+        <button onclick="searchLocation()">Search</button>
+    
+        <div id="map"></div> <!-- This is where the map will be displayed -->
+    
+    </div>
     </div>
     <div id="contactContent" class="content" style="display: none;">
         <h2>Contact Us</h2>

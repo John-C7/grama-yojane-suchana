@@ -6,6 +6,7 @@ function showTab(tab) {
   var taluksContent = document.getElementById("taluksContent");
   var informationContent = document.getElementById("informationContent");
   var newsContent = document.getElementById("newsContent");
+  var gramPanchayatContent = document.getElementById("gramPanchayatContent");
   var contactContent = document.getElementById("contactContent");
 
   if (tab === "home") {
@@ -13,32 +14,49 @@ function showTab(tab) {
     taluksContent.style.display = "none";
     informationContent.style.display = "none";
     newsContent.style.display = "none";
+    gramPanchayatContent.style.display = "none";
     contactContent.style.display = "none";
   } else if (tab === "taluks") {
     homeContent.style.display = "none";
     taluksContent.style.display = "block";
     informationContent.style.display = "none";
     newsContent.style.display = "none";
+    gramPanchayatContent.style.display = "none";
     contactContent.style.display = "none";
   } else if (tab === "information") {
     homeContent.style.display = "none";
     taluksContent.style.display = "none";
     informationContent.style.display = "block";
     newsContent.style.display = "none";
+    gramPanchayatContent.style.display = "none";
     contactContent.style.display = "none";
   } else if (tab === "news") {
     homeContent.style.display = "none";
     taluksContent.style.display = "none";
     informationContent.style.display = "none";
     newsContent.style.display = "block";
+    gramPanchayatContent.style.display = "none";
+    contactContent.style.display = "none";
+  } else if (tab === "gramPanchayat") {
+    // Added
+    homeContent.style.display = "none";
+    taluksContent.style.display = "none";
+    informationContent.style.display = "none";
+    newsContent.style.display = "none";
+    gramPanchayatContent.style.display = "block";
     contactContent.style.display = "none";
   } else if (tab === "contact") {
     homeContent.style.display = "none";
     taluksContent.style.display = "none";
     informationContent.style.display = "none";
     newsContent.style.display = "none";
+    gramPanchayatContent.style.display = "none";
     contactContent.style.display = "block";
   }
+}
+
+function redirectToGramPanchayat() {
+  showTab("gramPanchayat");
 }
 
 function toggleLanguage() {
@@ -55,9 +73,116 @@ function toggleLanguage() {
     currentLanguage = "english";
   }
 }
+var gramaPanchayatMap = {
+  Agara:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.9851644630435!2d77.4846434751092!3d12.84423458745959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae40c41eaaaaab%3A0xada2e99105fe41c!2sAagara%20Grama%20Panchayath!5e0!3m2!1sen!2sin!4v1701503063759!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  Ajjanahalli:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.967358441414!2d77.36934077511033!3d12.909819487399947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae378217ffeb41%3A0xa966751ff0f966df!2sAjjanahalli%20Village%20Panchayat%20Office!5e0!3m2!1sen!2sin!4v1701502848467!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  ChannenaHalli:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d72398.00715098389!2d77.32195585497654!3d12.954627819494641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3be26dc993d7%3A0x7692aeb82d3d7e8c!2sChennenahalli%20panchayat%20office!5e0!3m2!1sen!2sin!4v1701502926349!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  CHIKKANAHALLI:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.412106808437!2d77.35272027510977!3d12.881201387425952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae37c2759a0edf%3A0x9448439fc4a00ba3!2sChikkanahalli%20Village%20Panchayat%20Office!5e0!3m2!1sen!2sin!4v1701502949311!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  CHOLANAYAKANAHALLI:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62220.74116717696!2d77.3135700324327!3d12.920808471655242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae31308eb6d0a5%3A0x56e286f2e86fc7fd!2sGrama%20Panchayat%20Cholanayakanahalli!5e0!3m2!1sen!2sin!4v1701503000793!5m2!1sen!2sin"" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  CHUNCHANAKUPPE:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.95649728135!2d77.38626457511035!3d12.910517587399273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae382ce91af1a5%3A0x348d2139af58ff73!2sChunchunkuppe%20Gram%20Panchayath%20Office!5e0!3m2!1sen!2sin!4v1701503031079!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  DODDATHOGURU:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.840078285555!2d77.65297527510934!3d12.853603687450997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6c9e57136875%3A0x68b9246dd98ad9e7!2sDoddathogur%20Panchayat%20Office!5e0!3m2!1sen!2sin!4v1701507940903!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  HGOLLAHALLI:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5580.638605920996!2d77.47467000892591!3d12.873418121954087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f5668f5ec11%3A0x4f9712b798936b91!2sH%20Gollahalli%20Gram%20Panchayat!5e0!3m2!1sen!2sin!4v1701507991907!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  KGOLLAHALLI:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16485.2786000858!2d77.43973166489741!3d12.842761523142702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae473e965c5fcb%3A0xd6b46dbc21194cf8!2sK%20Gollahalli%20Gram%20Panchayat!5e0!3m2!1sen!2sin!4v1701508046306!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  KAGGALIPURA:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.656825443386!2d77.50557857510844!3d12.800773487499107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae4173b7f03853%3A0x9bd078b8900612f5!2sKaggalipura%20Gram%20Panchayati%20Office!5e0!3m2!1sen!2sin!4v1701508072283!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  KONAPPANAAGRAHAARA:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.846313379619!2d77.66115097510936!3d12.853201187451374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6c99eaeb3c3f%3A0xc850d51119457df2!2sKonnapana%20Agrahara%20Grama%20Panchayath%20Office.!5e0!3m2!1sen!2sin!4v1701508114449!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  KUMBALAGODU:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4372507936246!2d77.44324617510979!3d12.879581587427396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae389812cbd9a7%3A0x744d556e421451ca!2sGram%20Panchayat%20Office%20Kumbalgodu!5e0!3m2!1sen!2sin!4v1701508133198!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  NELAGULI:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7782.26030816247!2d77.4836949417373!3d12.770058500108147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae4343866c8a4b%3A0xbf47a8546acda4b5!2sNelaguli%20Grama%20Panchayat!5e0!3m2!1sen!2sin!4v1701508156512!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  RAMOHALLI:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2710.511477906629!2d77.4181703317475!3d12.907860758190978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDU0JzI4LjIiTiA3N8KwMjUnMDUuMCJF!5e0!3m2!1sen!2sin!4v1701508289922!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  SOMANAHALLI:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15564.336018507687!2d77.49393826859786!3d12.773056401137934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae43da96798931%3A0x49d6795953358f75!2sGrama%20Panchayat!5e0!3m2!1sen!2sin!4v1701508347370!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  SOOLIKERE:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.563609866825!2d77.44432817511075!3d12.935745487376291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae39101c2291c7%3A0xe37898ff403b5144!2sSulikere%20Gram%20Panchayat!5e0!3m2!1sen!2sin!4v1701508366580!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  THARALU:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124470.49213787274!2d77.40202322731618!3d12.862457290265723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae418407a836d1%3A0x4c6d00a14063eed5!2sTharalu%20Grama%20Panchayat%20Office!5e0!3m2!1sen!2sin!4v1701508388870!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+  THAVAREKERE:
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7776.245335859008!2d77.39182935218034!3d12.964001568938652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3a18eec470e5%3A0x154260d7d88e345a!2sTavarekere%20grampanchayathi%20karyalaya%20(Nada%20Kacheri)!5e0!3m2!1sen!2sin!4v1701508450050!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+};
+
+function searchLocation() {
+  var gramaPanchayat = document.getElementById("gramaPanchayat").value;
+
+  // Get the map container and replace its content with the embedded HTML code
+  var mapContainer = document.getElementById("map");
+  mapContainer.innerHTML = gramaPanchayatMap[gramaPanchayat];
+
+  // Create an iframe with the Google Maps URL
+  var mapIframe = document.createElement("iframe");
+  mapIframe.src = googleMapsURL;
+  mapIframe.width = "600";
+  mapIframe.height = "450";
+  mapIframe.style.border = "0";
+  mapIframe.allowfullscreen = true;
+  mapIframe.loading = "lazy";
+  mapIframe.referrerpolicy = "no-referrer-when-downgrade";
+
+  // Get the map container and replace its content with the iframe
+  var mapContainer = document.getElementById("map");
+  mapContainer.innerHTML = "";
+  mapContainer.appendChild(mapIframe);
+}
+
+var gramPanchayatOptionsSouth = [
+  "Agara",
+  "Ajjanahalli",
+  "ChannenaHalli",
+  "CHIKKANAHALLI",
+  "CHOLANAYAKANAHALLI",
+  "CHUNCHANAKUPPE",
+  "DODDATHOGURU",
+  "HGOLLAHALLI",
+  "KGOLLAHALLI",
+  "KAGGALIPURA",
+  "KONAPPANAAGRAHAARA",
+  "KUMBALAGODU",
+  "NELAGULI",
+  "RAMOHALLI",
+  "SOMANAHALLI",
+  "SOOLIKERE",
+  "THARALU",
+  "THAVAREKERE",
+];
+
+// Function to update Grama Panchayat options based on the selected district
+function updateGramaPanchayatOptions() {
+  var taluk = document.getElementById("taluk").value;
+  var gramaPanchayatSelect = document.getElementById("gramaPanchayat");
+
+  gramaPanchayatSelect.innerHTML = "";
+
+  // Add default option
+  gramaPanchayatSelect.appendChild(new Option("--", "--"));
+
+  if (taluk === "BENGALURU SOUTH") {
+    for (var i = 0; i < gramPanchayatOptionsSouth.length; i++) {
+      gramaPanchayatSelect.appendChild(
+        new Option(gramPanchayatOptionsSouth[i], gramPanchayatOptionsSouth[i])
+      );
+    }
+  }
+}
 
 function translateToKannada() {
-  // Add your Kannada translations here
+  document.getElementById("homeContent").innerHTML = `
+    <h2>ನಮ್ಮ ಗ್ರಾಮೀಣ ಮಾಹಿತಿ ಪೋರ್ಟಲ್ ಗೆ ಸುಸ್ವಾಗತ!</h2>
+    <p>ಈ ವೆಬ್‌ಸೈಟ್ ಹಳ್ಳಿಗಳಿಗೆ ಲಾಭಕರವಾಗಿರುವ ಸರ್ಕಾರದ ಯೋಜನೆಗಳ ಬಗ್ಗೆ ಮಹತ್ವದ ಮಾಹಿತಿ ಒದಗಿಸುತ್ತದೆ. ಇಲ್ಲಿ ನೀವು ಈ ಯೋಜನೆಗಳ ವಿವರಗಳನ್ನು ಅಧ್ಯಯನಿಸಬಹುದು ಎಂಬ ಲಿಂಕ್‌ಗಳನ್ನು ಕಾಣಬಹುದು.</p>
+    <p><h3>ನಿಮ್ಮ ಹತ್ತಿರದ ಗ್ರಾಮ ಪಂಚಾಯತ್ ಕಚೇರಿಯನ್ನು ಹುಡುಕಿ <button onclick="redirectToGramPanchayat()">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ</button></h3></p>
+    <p><strong>ಸಂದರ್ಭ:</strong> ಗ್ರಾಮೀಣ ವಿಕಾಸವು ಮುಖ್ಯವಾಗಿದೆ, ಮತ್ತು ಈ ಪೋರ್ಟಲ್ ಗ್ರಾಮೀಣ ಸಮುದಾಯಗಳೇನೋ ಸರ್ಕಾರದ ಹೊಗಳಿಕೆಗಳಡಿಯಲ್ಲಿ ಸೇರುತ್ತದೆ. ಇಂತಹ ಯೋಜನೆಗಳ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ ಮತ್ತು ನಿಮ್ಮ ಹಳ್ಳಿಯನ್ನು ಜ್ಞಾನದಿಂದ ಶಕ್ತಿಗೊಳಿಸಿ.</p>
+
+  `;
   document.getElementById("contactContent").innerHTML = `
         <h2>ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</h2>
         <p>ಈ ವೆಬ್ಸೈಟ್ ಒಂದು AICTE ಯಜಮಾನತ್ವದ ಭಾಗವಾಗಿ ರಚಿಸಲಾಗಿದೆ</p>
@@ -68,6 +193,24 @@ function translateToKannada() {
 
     `;
   document.getElementById("taluksContent").innerHTML = `
+  <h2>ಕರ್ನಾಟಕ-ಒನ್ ಕೇಂದ್ರಗಳು</h2>
+  <div class="taluk-box" id="Bengaluru Rural">
+      <h3>ಕರ್ನಾಟಕ-ಒನ್ ಕೇಂದ್ರಗಳು</h3>
+      <p>ಕರ್ನಾಟಕ-ಒನ್ ಕೇಂದ್ರಗಳ ಪಟ್ಟಿ <a href="https://www.karnatakaone.gov.in/Public/CenterDetails" target="_blank">ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ</a></p>
+  </div>
+  
+  <h2>ಮೈಸೂರು-ಒನ್ ಕೇಂದ್ರಗಳು</h2>
+  <div class="taluk-box" id="Bengaluru Rural">
+      <h3>ಮೈಸೂರು-ಒನ್ ಕೇಂದ್ರಗಳು</h3>
+      <p>ಮೈಸೂರು-ಒನ್ ಕೇಂದ್ರಗಳ ಬಗ್ಗೆ ಮಾಹಿತಿ <a href="https://www.karnataka.com/mysore/mysore-one/" target="_blank">ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ</a></p>
+  </div>
+  
+  <h2>ತುಮಕೂರು-ಒನ್ ಕೇಂದ್ರಗಳು</h2>
+  <div class="taluk-box" id="Bengaluru Rural">
+      <h3>ತುಮಕೂರು-ಒನ್ ಕೇಂದ್ರಗಳು</h3>
+      <p>ತುಮಕೂರು-ಒನ್ ಕೇಂದ್ರಗಳ ಬಗ್ಗೆ ಮಾಹಿತಿ <a href="https://www.karnataka.com/govt/tumkur-one/" target="_blank">ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ</a></p>
+  </div>
+  
     
     <h2>ತಾಲೂಕುಗಳನ್ನು ಅನ್ವಯಿಸಿ</h2>
     
@@ -152,12 +295,27 @@ function translateToKannada() {
 <h3>ಕರ್ನಾಟಕ-ಎಸಮಿಕ್ಷ</h3>
 <p>ಕರ್ನಾಟಕ-ಎಸಮಿಕ್ಷ ಹೊಸ ಸಮಯ, ಆನ್ಲೈನ್ ಸಿಸ್ಟಂ ನಿರ್ವಹಿಸಲು . <a href="https://esamiksha.gov.in/Karnataka/" target="_blank">ಮತ್ತಷ್ಟು ಓದಿ</a></p>
 </div>
+<div class="news-box">
+    <h3>ಕರ್ನಾಟಕ-ಒನ್</h3>
+    <p>ಕರ್ನಾಟಕ ಒನ್ ಆಫೀಸಿಯಲ್ ವೆಬ್‌ಸೈಟ್ ಕೊನೆಯ ಅಪ್‌ಡೇಟ್ಗಳು <a href="https://www.karnatakaone.gov.in/" target="_blank">ಓದಿ</a></p>
+</div>
+<div class="news-box">
+    <h3>ಕರ್ನಾಟಕ-ಡೇಟಾ-ಗವ್</h3>
+    <p>ಗ್ರಾಮೀಣ ಡೇಟಾಸೆಟ್ || 01/06/2023 ರಂದು ನವಿಲು <a href="https://karnataka.data.gov.in/catalogs?sector=Rural" target="_blank">ಓದಿ</a></p>
+</div>
 </div>
 
 `;
 }
 function translateToEnglish() {
-  // Add your English translations here
+  document.getElementById("homeContent").innerHTML = `
+  
+        <h2>Welcome to our Rural Information Portal!</h2>
+        <p>This website provides valuable information about government schemes aimed at benefiting villages. You will find links to the respective government websites where you can explore detailed information about these schemes.</p>
+        <p><h3>Find your nearest Gram Panchayat Office <button onclick="redirectToGramPanchayat()">Click Here</button></h3></p>
+        <p><strong>Context:</strong> Rural development is a priority, and this portal serves as a bridge between rural communities and government initiatives. Stay informed and empower your village with the knowledge of available schemes.</p>
+
+  `;
   document.getElementById("contactContent").innerHTML = `
         <h2>Contact Us</h2>
         <p>This website was created as a part of the project work under AICTE</p>
@@ -215,9 +373,27 @@ function translateToEnglish() {
     <h3>MINISTRY OF RURAL DEVELOPMENT</h3>
     <p>List of Central Government Schemes for Ruarl Development. <a href="https://rural.nic.in/en/scheme-websites" target="_blank">Learn more</a></p>
 </div>
+<div class="info-box">
+<h3>Panchatantra</h3>
+<p>Gram Panchayat information. <a href="https://panchatantra.karnataka.gov.in/" target="_blank">Learn More</a></p></div>
     `;
   document.getElementById("taluksContent").innerHTML = `
-    <h2>Explore Taluks</h2>
+  <h2>Karnataka-One Centers</h2>
+  <div class="taluk-box" id="Bengaluru Rural">
+      <h3>Karnataka-One Centers</h3>
+      <p>List of Karnataka One Centers <a href="https://www.karnatakaone.gov.in/Public/CenterDetails" target="_blank">Learn more</a></p>
+  </div>
+  <h2>Mysore-One Centers</h2>
+  <div class="taluk-box" id="Bengaluru Rural">
+      <h3>Mysore-One Centers</h3>
+      <p>Information about Mysore One Centers <a href="https://www.karnataka.com/mysore/mysore-one/" target="_blank">Learn more</a></p>
+  </div>
+  <h2>Tumkuru-One Centers</h2>
+  <div class="taluk-box" id="Bengaluru Rural">
+      <h3>Tumkuru-One Centers</h3>
+      <p>Information about Tumkuru One Centers <a href="https://www.karnataka.com/govt/tumkur-one/" target="_blank">Learn more</a></p>
+  </div>
+    <h2>Explore Taluks in Bengaluru South</h2>
 
     <div class="taluk-box" id="agara">
         <h3>Agara</h3>
@@ -261,6 +437,14 @@ function translateToEnglish() {
 <div class="news-box">
     <h3>Karnataka-eSamikSha</h3>
     <p>Decisions taken during the presentations made by different Department to the Chief Minister <a href="https://esamiksha.gov.in/Karnataka/" target="_blank">Read more</a></p>
+</div>
+<div class="news-box">
+      <h3>Karnataka-One</h3>
+      <p>Karnataka One Official Website latest updates <a href="https://www.karnatakaone.gov.in/" target="_blank">Read more</a></p>
+</div>
+<div class="news-box">
+    <h3>Karnataka-Data-Gov</h3>
+    <p>Rural DataSet || Updated on 01/06/2023 <a href="https://karnataka.data.gov.in/catalogs?sector=Rural" target="_blank">Read more</a></p>
 </div>
     `;
 }
