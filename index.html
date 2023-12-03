@@ -9,13 +9,13 @@
 </head>
 <body>
 
-    <header>
+    <header id="headerContent" class="content">
         <h1>Rural Information Portal</h1>
     </header>
 
     <button onclick="toggleLanguage()">Switch to Kannada</button>
-
-    <nav>
+   
+    <nav id="navContent">
         <a href="#home" onclick="showTab('home')">Home</a>
         <a href="#taluks" onclick="showTab('taluks')">Taluks</a>
         <a href="#information" onclick="showTab('information')">Information</a>
@@ -23,13 +23,14 @@
         <a href="#gramPanchayat" onclick="showTab('gramPanchayat')">Gram Panchayat</a>
         <a href="#contact" onclick="showTab('contact')">Contact</a>
     </nav>
-
+    <body class="home">
     <div id="homeContent" class="content">
         <h2>Welcome to our Rural Information Portal!</h2>
         <p>This website provides valuable information about government schemes aimed at benefiting villages. You will find links to the respective government websites where you can explore detailed information about these schemes.</p>
         <p><h3>Find your nearest Gram Panchayat Office <button onclick="redirectToGramPanchayat()">Click Here</button></h3></p>
         <p><strong>Context:</strong> Rural development is a priority, and this portal serves as a bridge between rural communities and government initiatives. Stay informed and empower your village with the knowledge of available schemes.</p>
     </div>
+    </body>
     <div id="taluksContent" class="content" style="display: none;">
         <h2>Karnataka-One Centers</h2>
         <div class="taluk-box" id="Bengaluru Rural">
@@ -124,7 +125,10 @@
     </div>
     <div id="newsContent" class="content" style="display: none;">
         <h2>Latest News</h2>
-    
+        <div class="news-box">
+            <h3>Daily Price List</h3>
+            <p>Daily market price list for fruits and vegitables  <a href="https://market.todaypricerates.com/vegetables-daily-price" target="_blank">Read more</a></p>
+        </div>
         <div class="news-box">
             <h3>Farmer Welfare Scheme</h3>
             <p>Ministry of Agriculture & Farmers Welfare || Date: Posted On: 01 AUG 2023 5:34PM by PIB Delhi <a href="https://pib.gov.in/PressReleasePage.aspx?PRID=1944749" target="_blank">Read more</a></p>
@@ -207,7 +211,7 @@
         <p>Source Code: <a href="https://github.com/Karthik-R-R/grama-yojane-suchana">Grama Yojane Suchana</a></p>
     </div>
 
-    <footer>
+    <footer id="footerContent">
         <p>&copy; 2023 Rural Information Portal</p>
     </footer>
     <script src="script.js"></script>

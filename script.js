@@ -176,6 +176,19 @@ function updateGramaPanchayatOptions() {
 }
 
 function translateToKannada() {
+  document.getElementById("headerContent").innerHTML = `
+  <h1>ಗ್ರಾಮೀಣ ಮಾಹಿತಿ ಪೋರ್ಟಲ್</h1>`;
+  document.getElementById("navContent").innerHTML = `
+  <a href="#home" onclick="showTab('home')">ಮುಖಪುಟ</a>
+  <a href="#taluks" onclick="showTab('taluks')">ತಾಲೂಕುಗಳು</a>
+  <a href="#information" onclick="showTab('information')">ಮಾಹಿತಿ</a>
+  <a href="#news" onclick="showTab('news')">ಸುದ್ದಿ</a>
+  <a href="#gramPanchayat" onclick="showTab('gramPanchayat')">ಗ್ರಾಮ ಪಂಚಾಯತ್</a>
+  <a href="#contact" onclick="showTab('contact')">ಸಂಪರ್ಕ</a>
+  `;
+  document.getElementById("footerContent").innerHTML = `
+    <p>&copy; 2023 ಗ್ರಾಮೀಣ ಮಾಹಿತಿ ಪೋರ್ಟಲ್</p>
+  `;
   document.getElementById("homeContent").innerHTML = `
     <h2>ನಮ್ಮ ಗ್ರಾಮೀಣ ಮಾಹಿತಿ ಪೋರ್ಟಲ್ ಗೆ ಸುಸ್ವಾಗತ!</h2>
     <p>ಈ ವೆಬ್‌ಸೈಟ್ ಹಳ್ಳಿಗಳಿಗೆ ಲಾಭಕರವಾಗಿರುವ ಸರ್ಕಾರದ ಯೋಜನೆಗಳ ಬಗ್ಗೆ ಮಹತ್ವದ ಮಾಹಿತಿ ಒದಗಿಸುತ್ತದೆ. ಇಲ್ಲಿ ನೀವು ಈ ಯೋಜನೆಗಳ ವಿವರಗಳನ್ನು ಅಧ್ಯಯನಿಸಬಹುದು ಎಂಬ ಲಿಂಕ್‌ಗಳನ್ನು ಕಾಣಬಹುದು.</p>
@@ -275,6 +288,11 @@ function translateToKannada() {
 `;
   document.getElementById("newsContent").innerHTML = `
 <h2>ಕೊನೆಯ ಸುದ್ದಿಗಳು</h2>
+<div class="news-box">
+    <h3>ದಿನಚರಿ ಬೆಲೆ ಪಟ್ಟಿ</h3>
+    <p>ಹಣ್ಣು ಮತ್ತು ತರಕಾರಿಗಳ ದಿನಚರಿ ಬೆಲೆ ಪಟ್ಟಿ  <a href="https://market.todaypricerates.com/vegetables-daily-price" target="_blank">ಮತ್ತಷ್ಟು ಓದಿ</a></p>
+</div>
+
 
 <div class="news-box">
 <h3>ರೈತ ಕಲ್ಯಾಣ ಯೋಜನೆ</h3>
@@ -461,6 +479,10 @@ function translateToEnglish() {
 
   document.getElementById("newsContent").innerHTML = `
     <h2>Latest News</h2>
+    <div class="news-box">
+      <h3>Daily Price List</h3>
+      <p>Daily market price list for fruits and vegitables  <a href="https://market.todaypricerates.com/vegetables-daily-price" target="_blank">Read more</a></p>
+    </div>
 
 <div class="news-box">
     <h3>Farmer Welfare Scheme</h3>
@@ -534,4 +556,18 @@ function translateToEnglish() {
 
     <div id="map"></div>
     `;
+  document.getElementById("headerContent").innerHTML = `
+    <h1>Rural Information Portal</h1>
+    `;
+  document.getElementById("navContent").innerHTML = `
+  <a href="#home" onclick="showTab('home')">Home</a>
+  <a href="#taluks" onclick="showTab('taluks')">Taluks</a>
+  <a href="#information" onclick="showTab('information')">Information</a>
+  <a href="#news" onclick="showTab('news')">News</a>
+  <a href="#gramPanchayat" onclick="showTab('gramPanchayat')">Gram Panchayat</a>
+  <a href="#contact" onclick="showTab('contact')">Contact</a>
+  `;
+  document.getElementById("footerContent").innerHTML = `
+    <p>&copy; 2023 Rural Information Portal</p>
+  `;
 }

@@ -6,29 +6,48 @@ body {
 }
 
 @keyframes colorChange {
-    0% {
-        background-color: rgb(79, 79, 139);
+    0%, 100% {
+        background-position: 0% 0;
+    }
+    25% {
+        background-position: 25% 0;
     }
     50% {
-        background-color: #ffeb3b; /* Yellow color */
+        background-position: 50% 0;
     }
-    100% {
-        background-color: #ff4500; /* Orange-Red color */
+    75% {
+        background-position: 75% 0;
+    }
+    90%{
+        background-position: 90% 0;
     }
 }
 
 header {
+    background: linear-gradient(to right, #6a9a1c, #9f8616, yellow, orange, red); /* Gradient of red tones */
     color: #fff;
     padding: 15px;
     text-align: center;
-    animation: colorChange 8s linear infinite; /* Adjust the duration as needed */
+    background-size: 400% 100%;
+    animation: colorChange 6s infinite linear;
+}
+
+
+body.home {
+    background: url('img1.jpg') center/cover fixed no-repeat;
+}
+
+#homeContent {
+    background-color: rgba(255, 255, 255, 0.4); /* Adjust the last value (0.8) for opacity */
+    padding: 20px;
+    border-radius: 10px; /* Optional: Add border-radius for a rounded look */
 }
 
 button {
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #dbc834;
+    background-color: #3466db;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -81,8 +100,8 @@ footer {
     transition: background-color 0.3s ease;
 }
 
-.taluk-box:hover, .info-box:hover {
-    background-color: #dddddd;
+.taluk-box:hover, .info-box:hover, .news-box:hover {
+    background-color: lightskyblue;
 }
 
 .news-box {
@@ -93,11 +112,7 @@ footer {
     transition: background-color 0.3s ease;
 }
 
-.news-box:hover {
-    background-color: #ddd;
-}
-
 h2 {
     text-shadow: #444;
-    color: steelblue;
+    color: rgb(224, 20, 20);
 }
