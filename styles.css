@@ -5,11 +5,23 @@ body {
     background-color: #f4f4f4;
 }
 
+@keyframes colorChange {
+    0% {
+        background-color: rgb(79, 79, 139);
+    }
+    50% {
+        background-color: #ffeb3b; /* Yellow color */
+    }
+    100% {
+        background-color: #ff4500; /* Orange-Red color */
+    }
+}
+
 header {
-    background-color: rgb(79, 79, 139);
     color: #fff;
     padding: 15px;
     text-align: center;
+    animation: colorChange 8s linear infinite; /* Adjust the duration as needed */
 }
 
 button {
